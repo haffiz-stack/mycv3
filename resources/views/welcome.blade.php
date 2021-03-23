@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel -MyCV3
                 </div>
 
                 <div class="links">
