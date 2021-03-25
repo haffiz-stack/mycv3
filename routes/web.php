@@ -20,3 +20,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('send-mail', function () {
+   
+    $details = [
+        'title' => 'Mail from HaffizSamad.live',
+        'body' => 'This is for testing email using mailjet'
+    ];
+   
+    \Mail::to('haffizhonor@gmail.com')->send(new \App\Mail\testMail($details));
+   
+    dd("Email is Sent.");
+});
