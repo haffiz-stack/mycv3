@@ -27,7 +27,7 @@ Route::get('send-mail', function () {
         'body' => 'This is for testing email using mailjet'
     ];
    
-    \Mail::to('haffizhonor@gmail.com')->send(new \App\Mail\testMail($details));
+    \Mail::to('haffiz_ito@yahoo.com')->send(new \App\Mail\testMail($details));
    
     dd("Email is Sent.");
 });
