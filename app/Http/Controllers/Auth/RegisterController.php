@@ -70,6 +70,12 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+        $details = [
+            'title' => 'Mail from HaffizSamad.live',
+            'body' => 'This is for testing email using mailjet'
+        ];
+
         \Mail::to('haffiz_ito@yahoo.com')->send(new \App\Mail\testMail($details));
+        dd('s');
     }
 }
