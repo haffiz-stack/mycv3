@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); 
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('send-mail', function () {
@@ -31,3 +31,8 @@ Route::get('send-mail', function () {
    
     dd("Email is Sent.");
 });
+
+Route::get('profile', function () {
+    dd('verified');
+    // Only verified users may enter...
+})->middleware('verified');
