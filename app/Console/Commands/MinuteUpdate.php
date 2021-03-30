@@ -37,8 +37,13 @@ class MinuteUpdate extends Command
      */
     public function handle()
     {
+        $details = [
+            'title' => 'Mail from HaffizSamad.live',
+            'body' => 'This is for testing email using mailjet'
+        ];
+        // echo "whatever \n";
         \Mail::to('haffiz_ito@yahoo.com')->send(new \App\Mail\testMail($details));
-        $this->info('email sent every minute');
-        return 0;
+        // $this->info('email sent every minute');
+        // return 0;
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Jobs\sendemail;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,19 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return view('home');
+    }
+
+    public function sendmail2()
+    {
+    // sendemail::dispatch();
+
+        $details = [
+            'title' => 'Mail from HaffizSamad.live',
+            'body' => 'This is for testing email using mailjet'
+        ];
+        \Mail::to('haffiz_ito@yahoo.com')->send(new \App\Mail\testMail($details));
+        dd('s');
         return view('home');
     }
 }
